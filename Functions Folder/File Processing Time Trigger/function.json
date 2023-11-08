@@ -1,0 +1,27 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "mytimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "0 0 0 * * *",
+      "runOnStartup": false
+    },
+    {
+      "type": "blob",
+      "name": "inputBlob",
+      "dataType": "binary",
+      "path": "okikisacc/primary/{extensions}",
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    },
+    {
+      "type": "blob",
+      "name": "outputBlob",
+      "path": "okikisacc/secondary/{extensions}",
+      "connection": "AzureWebJobsStorage",
+      "direction": "out"
+    }
+  ]
+}
